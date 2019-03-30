@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'sa-angular-dropdown',
@@ -7,11 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaAngularDropdownComponent implements OnInit {
 
-  public selectedValue: string = 'Select';
-  public options: any[] = [];
+  public _selectedValue: any = { value: null, text: 'Select' };
+  public _showDropdown: boolean = false;
+
+  @Input() options: any[] = [];
   constructor() { }
 
   ngOnInit() {
   }
 
+  public changeSelected(option, $event) {
+    this._selectedValue = option;
+    this._showDropdown = false;
+    $event.stopPropagation();
+  }
 }

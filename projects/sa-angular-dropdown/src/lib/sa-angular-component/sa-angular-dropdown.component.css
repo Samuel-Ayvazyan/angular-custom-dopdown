@@ -53,7 +53,7 @@
     line-height: 40px;
     padding: 0 10px;
 }
-.select ul li:hover {
+.select ul li:hover, .select ul li.selected {
     background-color: #005ea8;
     color: #fff;
 }

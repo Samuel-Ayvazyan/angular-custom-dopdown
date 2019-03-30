@@ -1,11 +1,13 @@
-<div class="select" tabindex="0">
+<div class="select" tabindex="0" (click)="_showDropdown=!_showDropdown; $event.stopPropagation();"
+        (blur)="_showDropdown=false;">
     <div class="selected">
         <font>
-            <font>{{selectedValue}}</font>
+            <font>{{_selectedValue.text}}</font>
         </font>
     </div>
-    <ul>
-        <li *ngFor="let el of options"  value="{{el.value}}">
+    <ul *ngIf="_showDropdown">
+        <li *ngFor="let el of options" value="{{el.value}}" (click)="changeSelected(el, $event);"
+            [ngClass]="{'selected': el == _selectedValue }">
             <font>
                 <font>{{el.text}}</font>
             </font>
