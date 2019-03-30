@@ -3,5 +3,5 @@
  */
 
 export * from './lib/sa-angular-dropdown.service';
-export * from './lib/sa-angular-dropdown.component';
+export * from './lib/sa-angular-component/sa-angular-dropdown.component';
 export * from './lib/sa-angular-dropdown.module';

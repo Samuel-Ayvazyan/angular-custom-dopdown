@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SaAngularDropdownComponent } from './sa-angular-dropdown.component';
+import { SaAngularDropdownComponent } from './sa-angular-component/sa-angular-dropdown.component';
 
 @NgModule({
   declarations: [SaAngularDropdownComponent],
