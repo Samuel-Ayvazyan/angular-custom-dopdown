@@ -1,4 +1,4 @@
-<div class="select" tabindex="0" (click)="_showDropdown=!_showDropdown; $event.stopPropagation();"
+<div class="select" tabindex="0" (click)="openDropdown($event);"
         (blur)="_showDropdown=false;">
     <div class="selected">
         <font>
@@ -7,7 +7,7 @@
     </div>
     <ul *ngIf="_showDropdown">
         <li *ngFor="let el of options" value="{{el.value}}" (click)="changeSelected(el, $event);"
-            [ngClass]="{'selected': el == _selectedValue }">
+            [ngClass]="{'selected': el == _hoveredValue }">
             <font>
                 <font>{{el.text}}</font>
             </font>
