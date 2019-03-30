@@ -30,4 +30,7 @@ export class AppComponent {
     { value: 2, text: 'Value2'},
     { value: 3, text: 'Value3'},
   ]
+  public option1;
+  public option2 = { value: 600, text: 'Value600'};
+  public option3;
 }

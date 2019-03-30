@@ -5,11 +5,14 @@
   </h1>
 </div>
 <div class="inline-30">
-  <sa-angular-dropdown [options]="arrOptions1"></sa-angular-dropdown>
+  <sa-angular-dropdown [options]="arrOptions1" [(selectedOption)]="option1"></sa-angular-dropdown>
+  <span>Output {{option1 | json }}</span>
 </div>
 <div class="inline-30">
-  <sa-angular-dropdown [options]="arrOptions2"></sa-angular-dropdown>
+  <sa-angular-dropdown [options]="arrOptions2" [(selectedOption)]="option2"></sa-angular-dropdown>
+  <span>Output {{option2 | json }}</span>
 </div>
 <div class="inline-30">
-  <sa-angular-dropdown [options]="arrOptions3"></sa-angular-dropdown>
+  <sa-angular-dropdown [options]="arrOptions3" [(selectedOption)]="option3"></sa-angular-dropdown>
+  <span>Output {{option3 | json }}</span>
 </div>
