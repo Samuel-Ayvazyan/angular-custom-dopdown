@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaAngularDropdownComponent implements OnInit {
 
+  public selectedValue: string = 'Select';
+  public options: any[] = [];
   constructor() { }
 
   ngOnInit() {

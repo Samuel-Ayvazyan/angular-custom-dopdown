@@ -1,0 +1,15 @@
+<div class="select" tabindex="0">
+    <div class="selected">
+        <font>
+            <font>{{selectedValue}}</font>
+        </font>
+    </div>
+    <ul>
+        <li *ngFor="let el of options"  value="{{el.value}}">
+            <font>
+                <font>{{el.text}}</font>
+            </font>
+        </li>
+    </ul>
+    <span class="arrow"></span>
+</div>
