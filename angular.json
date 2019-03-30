@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "SaAngularDropdown": {
+      "root": "projects/sa-angular-dropdown",
+      "sourceRoot": "projects/sa-angular-dropdown/src",
+      "projectType": "library",
+      "prefix": "SaAngular",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/sa-angular-dropdown/tsconfig.lib.json",
+            "project": "projects/sa-angular-dropdown/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sa-angular-dropdown/src/test.ts",
+            "tsConfig": "projects/sa-angular-dropdown/tsconfig.spec.json",
+            "karmaConfig": "projects/sa-angular-dropdown/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sa-angular-dropdown/tsconfig.lib.json",
+              "projects/sa-angular-dropdown/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-custom-dropdown"

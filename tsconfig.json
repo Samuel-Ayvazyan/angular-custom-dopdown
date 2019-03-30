@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "sa-angular-dropdown": [
+        "dist/sa-angular-dropdown"
+      ],
+      "sa-angular-dropdown/*": [
+        "dist/sa-angular-dropdown/*"
+      ]
+    }
   }
 }
