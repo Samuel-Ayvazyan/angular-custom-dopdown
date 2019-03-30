@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostListener, Output, EventEmitter, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'sa-angular-dropdown',
@@ -12,6 +12,8 @@ export class SaAngularDropdownComponent implements OnInit {
   public _showDropdown: boolean = false;
 
   @Input() options: any[] = [];
+  @Input() selectedOption: any;
+  @Output() selectedOptionChange = new EventEmitter();
 
   @HostListener('document:keydown.escape', ['$event']) onKeyEscHandler(event: KeyboardEvent) {
     this._showDropdown = false;
@@ -34,6 +36,7 @@ export class SaAngularDropdownComponent implements OnInit {
     if( !this._showDropdown ) return;
 
     this._selectedValue = this._hoveredValue;
+    this.selectedOptionChange.emit(this._selectedValue);
     this._showDropdown = false;
   }
 
@@ -50,7 +53,32 @@ export class SaAngularDropdownComponent implements OnInit {
 
   public changeSelected(option, $event) {
     this._selectedValue = option;
+    this.selectedOptionChange.emit(this._selectedValue);
     this._showDropdown = false;
     $event.stopPropagation();
+  }
+
+  ngOnChanges(simpleChanges: SimpleChanges) {
+    if (simpleChanges.hasOwnProperty("options")) {
+      this.options = this.options;
+    }
+    if (this.options && !this.selectedOption) this.setDefault();
+    else if (this.options && this.selectedOption) {
+      if (this.selectedOption.hasOwnProperty("value")) {
+        let ind = this.options.findIndex( (opt:any) => {
+          return opt.value == this.selectedOption.value && opt.text == this.selectedOption.text;
+        })
+        console.log(ind);
+        if( ind >= 0 ) {
+          this._selectedValue = this.options[ind]
+        } else {
+          this.setDefault()
+        }
+      }
+    }
+  }
+
+  public setDefault() {
+    this._selectedValue = { value: null, text: 'Select' };
   }
 }
