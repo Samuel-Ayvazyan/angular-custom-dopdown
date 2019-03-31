@@ -1,8 +1,20 @@
 {
   "name": "sa-angular-dropdown",
-  "version": "0.0.1",
+  "version": "1.0.1",
+  "description": "A full featured dropdown component for Angular",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
-  }
+  },
+  "author": "Samuel Ayvazyan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Samuel-Ayvazyan/angular-custom-dopdown"
+  },
+  "keywords": [
+    "angular",
+    "typescript",
+    "dropdown",
+    "component"
+  ]
 }
