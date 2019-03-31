@@ -1,6 +1,63 @@
 # SaAngularDropdown
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+A full featured dropdown component for Angular
+
+## Example
+To install the library:
+```
+npm install sa-angular-dropdown
+```
+
+Include the library into your app module-
+```
+import {SaAngularDropdownModule} from 'sa-angular-dropdown';
+```
+
+Add it to your @NgModule imports-
+```
+@NgModule({
+  imports: [
+    BrowserModule
+    ...,
+    ...,
+    SaAngularDropdownModule
+  ],
+  declarations: [...],
+  ...
+})
+```
+
+## Usage
+```
+dummyData = [{
+  value: 1,
+  text: "Foo"
+}, {
+  value: 2,
+  text: "Bar"
+}]
+<sa-angular-dropdown [options]="dummyData"></sa-angular-dropdown>
+```
+
+## Options
+
+Apart from the default settings, there are a number of options that can be
+specified for the dropdown components. Options are specified by directly adding it to the
+element as attribute with property binding, attribute binding and event binding.
+Possible options are:
+
+  * `options` (property): To set the data of that dropdown (required).
+  * `selectedOption` (property, supports two way binding): To set any option as the selected option -
+  Usage:
+    ```
+    <sa-angular-dropdown [options]="dummyData" [(selectedOption)]="dummyOption"></sa-angular-dropdown>
+    ```
+  * `selectedOptionChange` (property): To call a function on selected option change event.
+  Usage:
+    ```
+    <sa-angular-dropdown [data]="dummyData" (selectedOptionChange)="dummyChange($event)"></sa-angular-dropdown>
+    ```
+
 
 ## Code scaffolding
 

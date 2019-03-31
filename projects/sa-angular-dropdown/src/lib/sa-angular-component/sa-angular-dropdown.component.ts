@@ -68,7 +68,6 @@ export class SaAngularDropdownComponent implements OnInit {
         let ind = this.options.findIndex( (opt:any) => {
           return opt.value == this.selectedOption.value && opt.text == this.selectedOption.text;
         })
-        console.log(ind);
         if( ind >= 0 ) {
           this._selectedValue = this.options[ind]
         } else {
